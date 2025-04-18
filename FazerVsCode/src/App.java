@@ -1,29 +1,31 @@
-import java.util.Scanner;
-
 public class App {
-        //Comentário
-
-    public static void funcao_teste (){
-        //Biblioteca para entrada de dados
-        Scanner ler = new Scanner(System.in);
-
-        //variável local 
-        String v2;
-        int v1;
-
-        System.out.println("Comando de Saida de Dados");
-        
-        System.out.printf("Informe uma palavra: ");
-        v2 = ler.next();
-
-        System.out.printf("Informe um número: ");
-        v1 = ler.nextInt();
-
-        System.out.printf(v2+" "+v1);
-    }
     public static void main(String[] args) throws Exception {
-        funcao_teste();
+        //objetos instanciados
+        Operadores op = new Operadores(10, 5);
+        Operadores op1 = new Operadores(7, 0);
 
+        System.out.println("Operações matemáticas");
+        op.adicionando();
+        System.out.println("A soma é: " + op.getResultado());
 
+        op.removendo();
+        System.out.println("A subtração é: " + op.getResultado());
+        
+        op.multiplicando();
+        System.out.println("A multiplicação é: " + op.getResultado());
+
+        op1.dividindo();
+        System.out.println("A divisão é: " + op1.getResultado());
+
+        System.out.println("");
+
+        System.out.println("Utilizando operadoes de comparação");
+        op.maiorMenor();
+
+        System.out.println("");
+
+        System.out.println("Utilizando operadores lógicos");
+        op.multiplicarSeDiferentes(3, 9);
+        op1.verificarConta();
     }
 }
